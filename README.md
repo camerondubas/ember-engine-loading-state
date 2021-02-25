@@ -1,57 +1,11 @@
 # ember-engine-loading-state
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This repo serves as an example of a bug in Ember Engines, where a loading state is not shown while the assets for a lazily loaded engine are being downloaded if the engine is mounted to the host application's root.
 
-## Prerequisites
-
-You will need the following things properly installed on your computer.
-
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
-* [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
-
-## Installation
-
-* `git clone <repository-url>` this repository
-* `cd ember-engine-loading-state`
-* `npm install`
-
-## Running / Development
-
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
+Two acceptance tests were added. One demonstrates that the intended functionality works when the engine is mounted to a child route, while the other demonstrates that this functionality doesn't work when mounted to the root.
 
 ### Running Tests
 
-* `ember test`
-* `ember test --server`
+Due to caching the downloaded assets in the test suite. The tests will inconsitently fail unless they are run seperately.
 
-### Linting
-
-* `npm run lint:hbs`
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+The `yarn run test-both` command can be run to execute both tests in sequence, ensuring consistent test results.

@@ -20,7 +20,10 @@
     "lint:js:fix": "eslint . --fix",
     "start": "ember serve",
     "test": "npm-run-all lint test:*",
-    "test:ember": "ember test"
+    "test:ember": "ember test",
+    "test-nested": "ember test --filter=\"nested route\"",
+    "test-root": "ember test --filter=\"host root\"",
+    "test-both": "yarn test-nested && yarn test-root"
   },
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",

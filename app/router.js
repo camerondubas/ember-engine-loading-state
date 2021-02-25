@@ -7,4 +7,8 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function () {
+  this.mount('example-engine');
+  this.route('nested', function () {
+    this.mount('example-engine');
+  });
 });
